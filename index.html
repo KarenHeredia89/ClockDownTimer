@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Count Down Timer</title>
+
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Custom CSS -->
+
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<!-- Custom JavaScript -->
+
+	<script src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/timeCircles/TimeCircles.js"></script>
+	<link href="js/timeCircles/TimeCircles.css" rel="stylesheet">
+
+
+</head>
+<body>
+	<div class="example stopwatch" data-timer="1296000"></div>
+	<div class="buttons">
+		<button class="btn btn-success start">Play</button>
+		<button class="btn btn-danger stop">Pausa</button>
+		<button class="btn btn-info restart">Reiniciar</button>
+	</div>
+
+<script type="text/javascript">
+	$(window).resize(function(){
+    $('.example.stopwatch').TimeCircles().rebuild();
+});
+	$(".example.stopwatch").TimeCircles();
+	$(".example").TimeCircles({fg_width: 0.01});
+	$(".start").click(function(){ $(".example.stopwatch").TimeCircles().start(); });
+	$(".stop").click(function(){ $(".example.stopwatch").TimeCircles().stop(); });
+	$(".restart").click(function(){ $(".example.stopwatch").TimeCircles().restart(); }); 
+
+</script>
+</body>
+</html>
